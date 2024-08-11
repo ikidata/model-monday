@@ -6,7 +6,7 @@ Ever wondered how the latest language models stack up against each other? Welcom
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Solution Architceture](#Solution-Architecture)
+- [Solution Architecture](#Solution-Architecture)
 - [Installation](#installation)
 - [Usage](#usage)
 - [More information](#More-information)
