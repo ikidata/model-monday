@@ -1,0 +1,49 @@
+Data + AI Summit 2024: An Executive Summary for Data Leaders
+Manish Agarwal
+by Manish Agarwal
+June 27, 2024 in Data Strategy
+
+Share this post
+The recent Data + AI Summit 2024 was our biggest ever. Over 16,000 of our top customers, prospects, and partners attended in person, and an additional 40,000+ tuned in virtually. It was a packed four days filled with crucial product announcements, training, certifications, partner showcases and hundreds of breakout sessions. Most importantly, it was an opportunity for the entire Data and AI community to unite to share learnings, network, celebrate accomplishments, and continue collaborating on the future of Data and AI.
+
+At the summit, we hosted over 1,000 tech executives at the Executive Forum, including over 125 participants in the CIO Circle. Our founders and executives shared valuable insights and lessons from Databricks' experience helping over 10,000 organizations thrive as Data + AI companies. Here is a glimpse of some of the talks from the Executive Forum:
+
+Arsalan Tavakoli, Databricks co-founder and SVP of Field Engineering, discussed the pivotal role of Compound AI in operationalizing Gen AI and emphasized the importance of open formats and standards for modern architectures.
+Naveen Zutshi, our CIO, highlighted how the Databricks IT department has been at the forefront of utilizing and testing our products for governance, warehousing, and ETL, and leveraging Gen AI to increase efficiency.
+Rochana Golani, our VP of Learning and Enablement, explained how data-centric companies continuously foster and expand their Data and AI culture through skills assessment, workshops, training, certifications, and the creation of centers of excellence.
+Robin Sutara, our field CTO, underscored the importance of the 3 Ps (People, Process, Platform) in building a solid foundation for successfully executing a Data + AI strategy.
+To best serve our customers, we prioritize listening to their feedback and addressing their most pressing concerns. This year, three key themes emerged:
+
+Everyone wants GenAI: Every organization wants to implement Gen AI immediately in production. However, achieving this is challenging, with over 85% of AI projects failing to reach production. Customers are less concerned with standard benchmarks of the latest models and more focused on how well these models perform on their enterprise data. They seek quality AI responses without hallucinations, aiming to deploy AI quickly, cost-effectively, and securely while maintaining privacy and the ability to iterate.
+Security and privacy are under pressure: The interest and adoption of Gen AI have led to numerous AI-related regulations, lawsuits, and a new wave of AI cyberattacks. Organizations require a comprehensive governance solution that extends beyond data and dashboards to encompass their entire data estate, including models, tables, connectors, and notebooks.
+Data estate is highly fragmented: Companies deal with many platforms and software solutions with incompatible and proprietary formats. This results in vendor lock-in, data silos, and a fragmented approach to security and governance, leading to slow, complex, and expensive data platforms.
+But it does not have to be this way. At Databricks, we built the Data Intelligence Platform to address these challenges so that customers can put reliable, cost-effective data and AI initiatives into production, while maintaining security and privacy on their own enterprise data, without getting trapped in vendor lock-ins or proprietary formats.
+
+Data Intelligence Platform
+
+Below is a summary of the key product announcements from DAIS 2024:
+
+Mosaic AI: Build and deploy production-quality Compound AI Systems
+
+We announced new capabilities that establish Databricks Mosaic AI as the best platform for building, deploying, evaluating, and governing production-quality Compound AI systems. Key features include the Mosaic AI Agent Framework, a comprehensive toolkit and workflow for developing high-quality Retrieval-Augmented Generation (RAG) and agentic applications, and Mosaic AI Model Training, a powerful tool for fine-tuning open source foundation models using your private data. Learn more about our Gen AI innovations in this blog.
+
+Unity Catalog Open Source: Industry's only open catalog for data and AI
+
+As the industry's only unified solution for data and AI governance across clouds and platforms, Unity Catalog is now open source! Unity Catalog OSS v0.1 is available today, marking the first step in our open source journey. This initiative reinforces Databricks' commitment to an open ecosystem. It gives customers the flexibility and control they need without vendor lock-in, and ushering in a new era of open catalog standards for data and AI. Learn more in our Open Sourcing Unity Catalog blog.
+
+Databricks + Tabular: A single, open, and common standard of interoperability
+
+With the acquisition of Tabular, a data management company founded by the original creators of Apache Iceberg™, we at Databricks now have the foremost experts on Delta Lake and Iceberg, who will work closely with the open source communities to bring interoperability and compatibility between these two formats. Delta Lake UniForm provides interoperability across Delta Lake, Iceberg, and Hudi. It supports the Iceberg REST Catalog API to make it easier for companies to use the analytics engines and tools they're already familiar with, across all their data. Learn more about the Tabular acquisition in this blog.
+
+Databricks AI/BI: Intelligent Analytics for Real-World Data
+
+At the summit, we introduced Databricks AI/BI, a revolutionary business intelligence product designed to deeply understand your data's semantics and enable anyone to analyze data for themselves. Built on a compound AI system, it draws insights from your data's entire lifecycle across the Databricks Platform. AI/BI offers two complementary experiences: AI/BI Dashboards, an AI-powered, low-code solution for conventional BI capabilities, answering fixed business questions and AI/BI Genie, a chat-like interface that learns continuously from human feedback, answering a broader set of business questions with accuracy. Discover how Databricks AI/BI can transform your business intelligence landscape.
+
+Databricks LakeFlow: A unified, intelligent solution for data engineering
+
+Databricks LakeFlow is a single, unified data engineering solution for ingestion, transformation, and orchestration, providing everything you need to build, operate, and govern production data pipelines on serverless compute. We believe LakeFlow will empower our customers to deliver fresher, more complete, and higher-quality data to their businesses. LakeFlow will soon enter preview, starting with LakeFlow Connect for ingestion. Learn more in our Databricks LakeFlow blog.
+
+Databricks Clean Rooms: Privacy-safe collaboration for data, analytics and AI
+
+At Databricks, we are committed to democratizing data and AI through open sharing and collaboration. Databricks Clean Rooms offer privacy-safe collaboration on any cloud. Our Delta Sharing protocol allows secure data and AI asset sharing, boosting innovation. The Databricks Marketplace connects users with a broad range of data and AI resources, fostering collaboration and innovation. Recently, we welcomed 12 new partners to the Delta Sharing ecosystem and are excited to announce new features and the upcoming Public Preview of Databricks Clean Rooms. Learn more in our Data Sharing and Collaboration blog.
+And these are just the major product announcements! Catch all of the other product announcements and releases, along with the keynotes and 500+ sessions at the DAIS 2024 site covering everything from GenAI and Data Warehousing best practices to Governance, Architecture, and Data Strategy best practices from leading Databricks customers, partners, and Databricks experts! Did you miss attending this year? Save the date, June 9-12, 2025, for the next Data + AI Summit!
