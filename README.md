@@ -13,7 +13,7 @@ Ever wondered how the latest language models stack up against each other? Welcom
 
 ## Introduction
 
-This repository contains the code used in Model Monday, fully optimized for execution in the Databricks environment. Please note that this is intended for demonstration purposes and includes multiple interesting features. However, the code can be easily modified for various use cases. Current Modules:
+The repository contains the code used in Model Monday, fully optimized for execution in the Databricks environment. Please note that this is intended for demonstration purposes and includes several interesting features, though some may be unoptimized. The code is easily modifiable for a variety of use cases. Current modules include:
 1) E1 - Llama 3.1.
 
 ## Solution Architecture
@@ -24,7 +24,7 @@ This repository contains the code used in Model Monday, fully optimized for exec
 To use the Model Monday code, first clone the repository to your Databricks environment. Ensure you are using the 15.4 LTS ML Beta Cluster (includes Apache Spark 3.5.0, Scala 2.12). In the 'configs.json' file, update your component names, such as model endpoint names, if necessary. In the 'Run LLM Judge' notebook, add the required OS environment settings for Azure OpenAI configurations (needed for LLM Judge). 
 
 ## Usage
-After completing the instruction steps, you can run and review all the code from the 'master_notebook'. This makes it easy to evaluate the functionality of each individual notebook. Remember to specify the correct Unity Catalog catalog, schema, and table name; the code will dynamically create new delta tables based on the master table name. If you forget to populate widget values, the code will pause. Once the widget values are populated, simply click "run all" and the remaining processes, including endpoint creation and deletion, is be automated.
+After completing the instruction steps, you can run all the code from the 'master_notebook'. Different phases are split into their own notebooks to make it easier to evaluate the functionality of each phase. Remember to specify the correct Unity Catalog catalog, schema, and table name; the code will dynamically create new delta tables based on the master table name. If you forget to populate widget values, the code will pause. Once the widget values are populated, simply click "run all" and the remaining processes, including endpoint creation and deletion, will be automated.
 
 ## More information
 To stay up-to-date with the latest developments: 
