@@ -26,7 +26,7 @@ To use the Model Monday code, first clone the repository to your Databricks envi
 ## Usage
 After completing the instruction steps, you can run and review all the code from the 'master_notebook'. This makes it easy to evaluate the functionality of each individual notebook. Remember to specify the correct Unity Catalog catalog, schema, and table name; the code will dynamically create new delta tables based on the master table name. If you forget to populate widget values, the code will pause. Once the widget values are populated, simply click "run all" and the remaining processes, including endpoint creation and deletion, is be automated.
 
-## More
+## More information
 To stay up-to-date with the latest developments: 
 1) Follow Ikidata on LinkedIn: https://www.linkedin.com/company/ikidata/ 
 2) Explore the solutions available on our website: https://www.ikidata.fi/solutions
