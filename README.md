@@ -30,3 +30,5 @@ After completing the instruction steps, you can run all the code from the 'maste
 To stay up-to-date with the latest developments: 
 1) Follow Ikidata on LinkedIn: https://www.linkedin.com/company/ikidata/ 
 2) Explore the solutions available on our website: https://www.ikidata.fi/solutions
+
+**Standardized? Let's automate it.**
