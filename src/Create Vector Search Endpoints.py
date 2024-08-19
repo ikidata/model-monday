@@ -1,7 +1,7 @@
 # Databricks notebook source
 class VectorSearchClass():
     '''
-    This Class Activas both vector search endpoint and vector search index based on config file parameters.
+    This Class Activates both vector search endpoint and vector search index based on config file parameters.
     '''
     def __init__(self, uc_catalog: str, uc_schema: str, uc_table: str):
         # Activating logger

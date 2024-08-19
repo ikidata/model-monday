@@ -1,10 +1,10 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC Blog text: 
-# MAGIC https://www.databricks.com/blog/data-ai-summit-2024-executive-summary-data-leaders
+# MAGIC Blog texts: 
+# MAGIC * https://www.databricks.com/blog/data-ai-summit-2024-executive-summary-data-leaders
+# MAGIC * https://www.databricks.com/blog/supernovas-black-holes-and-streaming-data
 
 # COMMAND ----------
-
 
 def check_catalog_and_schema_exists(catalog_name: str, schema_name: str, table_name: str) -> None:  
     '''
@@ -113,12 +113,14 @@ def create_dataframe(uc_catalog: str, uc_schema: str, uc_table: str, dataset: li
 
 # COMMAND ----------
 
+file_path = dbutils.widgets.get("file_path")
+
 # Main program
 if __name__ == "__main__":
     check_catalog_and_schema_exists(uc_catalog, 
                                     uc_schema, 
                                     uc_table) 
-    raw_text = load_raw_text('../src/raw/rag_dataset.txt')  
+    raw_text = load_raw_text(file_path) 
     split_text = split_text_into_documents(raw_text)
     dataset = create_dataset(split_text)
     create_dataframe(uc_catalog, 
