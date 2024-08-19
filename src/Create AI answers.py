@@ -154,7 +154,7 @@ class AIMaster():
     def call_chat_model(self, prompt: str, **kwargs): 
         """Calls the chat model and returns the response text or tool calls."""
         chat_args = {
-            "model": self.endpoint,
+            "model":  self.endpoint,
             "messages": [
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt},
@@ -177,34 +177,41 @@ class AIMaster():
         '''
         The mosaic_function defines a set of tools for the chat model, including a function to get weather information for a specific city. The function then calls the chat model with the provided prompt and tools, logs the generated response along with the original text, question type, and elapsed time, and stores this information using the log_answers method.
         '''
-        base_url = f'https://{spark.conf.get("spark.databricks.workspaceUrl")}/serving-endpoints'
-        self.openai_client = OpenAI(api_key=self.token, base_url=base_url)
+        try:
+            base_url = f'https://{spark.conf.get("spark.databricks.workspaceUrl")}/serving-endpoints'
+            self.openai_client = OpenAI(api_key=self.token, base_url=base_url)
 
-        tools = [
-            {
-                "type": "function",
-                "function": {
-                    "name": "get_weather",
-                    "description": "Get weather for a chosen city",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "city": {
-                                "type": "string",
-                                "description": "City to be used",
-                            }
-                        },
-                        "required": ["city"],
-                    },
-                },
-            }
-        ]
+            tools = [
+                    {
+                        "type": "function",
+                        "function": {
+                                "name": "get_weather",
+                                "description": "Get weather for a chosen city",
+                                "parameters": {
+                                    "type": "object",
+                                    "properties": {
+                                        "city": {
+                                            "type": "string",
+                                            "description": "City to be used",
+                                        }
+                                    },
+                                    "required": ["city"],
+                                },
+                            },
+                        }
+                    ]
 
-        start_time = time.time()                           
-        response = self.call_chat_model(prompt = text, 
-                                        tools=tools)
-        elapsed_time = round(time.time() - start_time, 2)   
-        self.logger.info(f"Mosaic AI Function calling reply has been generated succesfully for question: {q}")
+            start_time = time.time()                           
+            response = self.call_chat_model(prompt = text, 
+                                            tools=tools,
+                                            #tool_choice = {"type": "tool", "name": "get_weather"})
+                                            tool_choice="auto")
+            elapsed_time = round(time.time() - start_time, 2)   
+            self.logger.info(f"Mosaic AI Function calling reply has been generated succesfully for question: {q}")
+        except:
+            response = '❌'
+            elapsed_time = round(time.time() - start_time, 2)  
+            self.logger.info(f"Mosaic AI Function calling reply failed for question: {q}")
         self.log_answers(text, response, elapsed_time,'function', q)
 
     def log_answers(self, question: str, answer: str, time: float, answer_type: str, q: str) -> None:
@@ -218,7 +225,7 @@ class AIMaster():
                     .withColumn('model', f.lit(self.model_name))
                     .withColumn('answer_type', f.lit(answer_type))
                     .withColumn('inserted', f.current_timestamp()))
-        df.write.mode('append').saveAsTable(f'{uc_catalog}.{uc_schema}.{uc_table}_inference_table')
+        df.write.mode('append').saveAsTable(f'{uc_catalog}.{uc_schema}.{uc_table}_inference_table') 
         self.logger.info(f"Answer has been logged successfully for question {q}")
 
     def call_ai(self, prompt: str, q: str):

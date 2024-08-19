@@ -39,7 +39,7 @@ uc_table = dbutils.widgets.get("uc_table")
 # COMMAND ----------
 
 # DBTITLE 1,Create RAG dataset
-# MAGIC %run "../src/Create Rag Dataset"
+# MAGIC %run "../src/Create Rag Dataset" $file_path="../src/raw/rag_dataset.txt"
 
 # COMMAND ----------
 

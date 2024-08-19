@@ -1,0 +1,17 @@
+{"configs": {"model_name": "Claude 3.5 Sonnet", "vector_search_endpoint_name": "vse_test", "embedding_endpoint": "databricks-gte-large-en", "endpoint": "anthropic-dev", "extra_params": {"max_tokens": 400, "temperature": 0.7}, "system_prompt": "You are an AI assistant currently under evaluation. Provide accurate and helpful responses with a touch of subtle humor to make interactions more engaging. Keep your answers concise and informative, aiming for a maximum of 4 sentences.", "rag_prompt": "You are an arcticle summarization expert. Use the following pieces of article context to answer the question at the end: {context} Question: {question} Answer:", "kv_scope": "kv_scope", "kv_secret": "kv_secret"}, 
+
+"questions": {"q0": "Can you introduce yourself and share a fun fact about yourself?",
+              "q1": "What is your favorite karaoke song, and what makes it special to you?",
+              "q2": "If you could invite any Finnish historical figure to a traditional sauna, who would it be and what would you discuss?",
+              "q3": "What is the most uniquely Finnish thing in your opinion? Something interesting that people might not be commonly aware of.",
+              "q4": "Can you write a haiku inspired by Finnish mythology?",
+              "q5": "What’s your most innovative business idea, and how would it positively impact the world?",
+              "q6": "Eeri wants to choose the better of two dice. He rolls them once and chooses the die that gives the higher result. If both dice give the same result, he chooses one of the dice. In either case, Eeri rolls the chosen die again. What is the probability that the result of the die on the second roll is smaller than the result on the first roll? Provide only the final answer as a percentage, rounded to 2 decimal places.",
+              "q_rag": " Can you tell me what questions Genie were asked to better understand the data?",
+              "q_function": "What's the current weather in Helsinki?"},
+              
+"judge_configs": {"databricks_endpoint": "YOUR_ENDPOINT_NAME_HERE", "openai_endpoint": "YOUR_ENDPOINT_NAME_HERE", "extra_params": {"max_tokens": 250, "temperature": 0.1}},
+"judge_prompts": {"rag_prompt": " Can you tell me what questions Genie were asked to better understand the data?", "rag_ground_truth": "I asked Genie numerous questions to better understand the data. Here's a small sample of what I explored: 1) How many GRB events occurred in the last 30 days? 2) What is the oldest event? 3) How many occurred on a Monday? (It remembers the context. I was talking about the number of events, and it knows how to apply temporal conditions on a data stream.) 4) How many occurred on average per day? 5) Give me a histogram of the merit value! 6) What is the maximum merit value?", 
+"function_prompt": "Tell me what Weather is in Helsinki currently",
+"normal_system_prompt": "You act as a GenAI Answer Judge Expert and your task is to evaluate answers from different LLM models. Remember to add a hint of humor to your explanations, be demanding and comment on answers very briefly."}
+}
