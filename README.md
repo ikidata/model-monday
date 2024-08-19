@@ -15,6 +15,7 @@ Ever wondered how the latest language models stack up against each other? Welcom
 
 The repository contains the code used in Model Monday, fully optimized for execution in the Databricks environment. Please note that this is intended for demonstration purposes and includes several interesting features, though some may be unoptimized. The code is easily modifiable for a variety of use cases. Current modules include:
 1) E1 - Llama 3.1.
+2) E2 - Claude 3.5 Sonnet
 
 ## Solution Architecture
 ![architecture](./pictures/Model%20Monday%20Solution%20Architecture.png)
