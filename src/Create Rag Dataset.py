@@ -1,8 +1,9 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC Blog texts: 
-# MAGIC * https://www.databricks.com/blog/data-ai-summit-2024-executive-summary-data-leaders
-# MAGIC * https://www.databricks.com/blog/supernovas-black-holes-and-streaming-data
+# MAGIC * 1) https://www.databricks.com/blog/data-ai-summit-2024-executive-summary-data-leaders
+# MAGIC * 2) https://www.databricks.com/blog/supernovas-black-holes-and-streaming-data
+# MAGIC * 3) https://www.databricks.com/blog/magic-data-data-curation-aibi-genie
 
 # COMMAND ----------
 

@@ -67,8 +67,8 @@ class ModelEndpointClass():
 
         session = requests.Session()
         resp = session.request('DELETE', url, verify=True, headers=headers)
-        assert resp.status_code == 200, f"Deleting External model serving endpoint for Anthropic has failed. \nError code: {resp.status_code}\nError message: {resp.json()}"
-        self.logger.info(f"Deleting External model serving endpoint for Anthropic has been successfully\n\n{resp.json()}")
+        assert resp.status_code == 200, f"Deleting External model serving endpoint for Mixtral has failed. \nError code: {resp.status_code}\nError message: {resp.json()}"
+        self.logger.info(f"Deleting External model serving endpoint for Mixtral has been successfully\n\n{resp.json()}")
 
 # COMMAND ----------
 

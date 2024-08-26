@@ -58,7 +58,7 @@ class ModelEndpointClass():
 
     def create_model_endpoint(self):
         '''
-        "Creating a Vector Search Endpoint Using the Databricks REST API"
+        "Creating a Model Endpoint Using the Databricks REST API"
         '''
         headers = {'Authorization': 'Bearer %s' % self.token}
         api_version = '/api/2.0'
