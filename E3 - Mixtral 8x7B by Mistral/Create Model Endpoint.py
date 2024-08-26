@@ -1,7 +1,7 @@
 # Databricks notebook source
 class ModelEndpointClass():
     '''
-    This Class deletes external model endpoint.
+    This Class creates external model endpoint for Mistral.
     '''
     def __init__(self, uc_catalog: str, uc_schema: str, uc_table: str):
         # Activating logger
@@ -56,23 +56,61 @@ class ModelEndpointClass():
             self.kv_secret = config_data['kv_secret']
         self.logger.info(f"Configs has been fetched successfully")  
 
-    def delete_model_endpoint(self):
+    def create_model_endpoint(self):
         '''
-        Deleting a Model Endpoint Using the Databricks REST API
+        "Creating a Model Endpoint Using the Databricks REST API"
         '''
+        headers = {'Authorization': 'Bearer %s' % self.token}
+        api_version = '/api/2.0'
+        api_command = '/serving-endpoints'
+        url = f'{self.server_hostname}{api_version}{api_command}'
+
+        payload = {
+                    "name": self.endpoint_name,
+                    "config": {
+                        "served_entities": [
+                        {
+                            "entity_name": "system.ai.mixtral_8x7b_instruct_v0_1",
+                            "entity_version": "3",
+                            "max_provisioned_throughput": 1700,
+                            "scale_to_zero_enabled": True
+                        }
+                        ]
+                    }
+                    }
+                            
+
+        session = requests.Session()
+
+        resp = session.request('POST', url, data = json.dumps(payload), verify=True, headers=headers)
+        assert resp.status_code == 200, f"Creating External model serving endpoint for Anthropic has failed. \nError code: {resp.status_code}\nError message: {resp.json()}"
+        self.logger.info(f"Creating External model serving endpoint for Anthropic has been created successfully\n\n{resp.json()}")
+
+    def validate_successful_model_endpoint_provision(self):
+
         headers = {'Authorization': 'Bearer %s' % self.token}
         api_version = '/api/2.0'
         api_command = f'/serving-endpoints/{self.endpoint_name}'
         url = f'{self.server_hostname}{api_version}{api_command}'
 
         session = requests.Session()
-        resp = session.request('DELETE', url, verify=True, headers=headers)
-        assert resp.status_code == 200, f"Deleting External model serving endpoint for Anthropic has failed. \nError code: {resp.status_code}\nError message: {resp.json()}"
-        self.logger.info(f"Deleting External model serving endpoint for Anthropic has been successfully\n\n{resp.json()}")
+
+        ready = False
+        while ready != True:
+            resp = session.request('GET', url, verify=True, headers=headers)
+            assert resp.status_code == 200, f"Fetching Model Endpoint '{self.endpoint_name}' has failed. \nError code: {resp.status_code}\nError message: {resp.json()}"
+            if resp.json()['state']['ready'] == 'NOT_READY':
+                ready = False
+                self.logger.info(f"Model Endpoint '{self.endpoint_name}' is still provisioning. Wait 30sec before the next try.")
+                time.sleep(30)
+            else:
+                self.logger.info(f"Model Endpoint '{self.endpoint_name}' is online.")
+                ready = True
 
 # COMMAND ----------
 
 # Main program
 if __name__ == "__main__":
     main = ModelEndpointClass(uc_catalog = uc_catalog, uc_schema = uc_schema, uc_table = uc_table)
-    main.delete_model_endpoint()
+    main.create_model_endpoint()
+    main.validate_successful_model_endpoint_provision()
