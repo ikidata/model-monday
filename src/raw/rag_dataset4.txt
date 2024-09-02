@@ -1,0 +1,33 @@
+Data Engineering and GenAI: The Tools Practitioners Need
+Databricks Staff
+by Databricks Staff
+August 30, 2024 in Platform Blog
+
+Share this post
+A recent MIT Tech Review Report shows that 71% of surveyed organizations intend to build their own GenAI models. As more work to leverage their proprietary data for these models, many encounter the same hard truth: The best GenAI models in the world will not succeed without good data.
+
+This reality emphasizes the importance of building reliable data pipelines that can ingest or stream vast amounts of data efficiently and ensure high data quality. In other words, good data engineering is an essential component of success in every data and AI initiative especially for GenAI.
+
+While many of the tasks involved in this effort remain the same regardless of the end workloads, there are new challenges that data engineers need to prepare for when building GenAI applications.
+
+The Core Functions
+For data engineers, the work typically spans three key tasks:
+
+Ingest: Getting the data from many sources – spanning on-premises or cloud storage services, databases, applications and more – into one location.
+Transform: Turning raw data into usable assets through filtering, standardizing, cleaning and aggregating. Often, companies will use a medallion architecture (Bronze, Silver and Gold) to define the different stages in the process.
+Orchestrate: The process of scheduling and monitoring ingestion and transformation jobs, as well as overseeing other parts of data pipeline development and addressing failures.
+The Shift to AI
+With AI becoming more of a focus, new challenges are emerging across each of these functions, including:
+
+Handling real-time data: More companies need to process information immediately. This could be manufacturers using AI to optimize the health of their machines, banks trying to stop fraudulent activity, or retailers giving personalized offers to shoppers. The growth of these real-time data streams adds yet another asset that data engineers are responsible for.
+Scaling data pipelines reliably: The more data pipelines, the higher the cost to the business. Without effective strategies to monitor and troubleshoot when issues arise, internal teams will struggle to keep costs low and performance high.
+Ensuring data quality: The quality of the data entering the model will determine the quality of its outputs. Companies need high-quality data sets to deliver the end performance needed to move more AI systems into the real world.
+Governance and security: We hear it from businesses every day: data is everywhere. And increasingly, internal teams want to use the information locked in proprietary systems across the business for their own, unique purposes. This has added new pressure on IT leaders to unify the growing data estates and exert more control over which employees are able to access which assets.
+The Platform Approach
+We built the Data Intelligence Platform to be able to address this diverse and growing set of challenges. Among the most critical features for engineering teams are:
+
+Delta Lake: Unstructured or structured; the open source storage format means it no longer matters what type of information the company is trying to ingest. Delta Lake helps businesses improve data quality and allows for easy and secure sharing with external partners. And now, with Delta Lake UniForm breaking down the barriers between Hudi and Iceberg, enterprises can keep even tighter control of their assets.
+Delta Live Tables: A powerful ETL framework that helps engineering teams simplify both streaming and batch workloads, across both Python and SQL, to lower costs.
+Databricks Workflows: A simple, reliable orchestration solution for data and AI that provides engineering teams enhanced control flow capabilities, advanced observability to monitor and visualize workflow execution and serverless compute options for smart scaling and efficient task execution.
+Unity Catalog: With Unity Catalog, data engineering and governance teams benefit from an enterprise-wide data catalog with a single interface to manage permissions, centralized auditing, automatically track data lineage down to the column level and share data across platforms, clouds and regions.
+To learn more about how to adapt your company's engineering team to the needs of the AI era, check out the "Big Book of Data Engineering."

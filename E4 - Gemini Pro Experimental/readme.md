@@ -1,0 +1,1 @@
+Unfortunately, Google has updated Vertex AI API authentication from API key to IAM only. This change causes problems for external model serving in Databricks because the solution is not hosted in GCP. This Episode was performed in Vertex AI instead of Databricks.
